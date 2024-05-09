@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
+const chatRoutes = require("./routes/chatRoutes");
 const session = require("express-session");
 const MongoDBStore = require('connect-mongodb-session')(session);
 dotenv.config();
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
+app.user("/api/chats", chatRoutes);
 
 const PORT = process.env.PORT;
 
