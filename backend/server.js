@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
-app.user("/api/chats", chatRoutes);
+app.use("/api/chats", chatRoutes);
 
 const PORT = process.env.PORT;
 
