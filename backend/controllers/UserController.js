@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const registerUser = async (req, res) => {
   const { name, email, password, pic } = req.body;
   if (!name || !email || !password) {
-    res.status(400).json({
+    return res.status(400).json({
       status: "fail",
       message: "Please Enter all the Fields",
     });
@@ -171,5 +171,5 @@ module.exports = {
   usersConnection,
   getWebSocketConnection,
   logout,
-  allUser
+  allUser,
 };
